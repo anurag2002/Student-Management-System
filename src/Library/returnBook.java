@@ -39,7 +39,7 @@ public class returnBook
                 dues = (days-14)*5;
             }
             flag = false;
-            query = "UPDATE Books_Details SET Date_of_Return = \"" + returnDate + "\", Dues = \"" + dues + "\" WHERE Book_ID = \"" + bookID + "\" AND URN = \"" + URN + "\"";
+            query = "UPDATE Book_Issue_List SET Date_of_Return = \"" + returnDate + "\", Dues = \"" + dues + "\" WHERE Book_ID = \"" + bookID + "\" AND URN = \"" + URN + "\"";
             stmt.executeUpdate(query);
         }
         if(flag)
