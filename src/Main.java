@@ -75,19 +75,19 @@ public class Main
             switch(role)
             {
                 case 1:
-                    admin ad = new admin(stmt);
+                    new admin(stmt);
                     break;
                 case 2:
-                    library(stmt);
+                    new library(stmt);
                     break;
                 case 3:
-                    sports(stmt);
+                    new sports(stmt);
                     break;
                 case 4:
-                    mess(stmt);
+                    new mess(stmt);
                     break;
                 case 5:
-                    student(stmt);
+                    new student(stmt);
                     break;
             }
 

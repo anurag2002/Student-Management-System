@@ -9,7 +9,7 @@ public class updateStudent
     updateStudent(Statement stmt) throws SQLException
     {
         System.out.print("Enter the URN of Student: ");
-        int URN = sc.nextInt();
+        String URN = sc.next();
         System.out.println();
         System.out.println("###########################################################");
 
@@ -31,6 +31,7 @@ public class updateStudent
 
             System.out.print("Enter the updated value: ");
             col_update = sc.next();
+            String tempURN = URN;
             switch(col_ind)
             {
                 case 1:
@@ -38,6 +39,7 @@ public class updateStudent
                     break;
                 case 2:
                     col_name = "URN";
+                    tempURN = col_update;
                     break;
                 case 3:
                     col_name = "Branch";
@@ -49,7 +51,7 @@ public class updateStudent
             System.out.println("###########################################################");
             System.out.println("\nStudent Details Updated\n");
             System.out.println("###########################################################");
-
+            new viewStudent(stmt,tempURN);
         }
         if(flag)
         {

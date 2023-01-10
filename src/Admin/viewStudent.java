@@ -10,6 +10,16 @@ public class viewStudent
     {
         System.out.print("Enter the URN of Student: ");
         String URN = sc.next();
+        viewStudentDetails(stmt, URN);
+    }
+
+    viewStudent(Statement stmt, String URN) throws SQLException
+    {
+        viewStudentDetails(stmt, URN);
+    }
+    
+    public void viewStudentDetails(Statement stmt, String URN) throws SQLException
+    {
         System.out.println();
         System.out.println("###########################################################");
 
@@ -29,5 +39,7 @@ public class viewStudent
         {
             System.out.println("Student Not Found");
         }
-    }    
+    }
+
+
 }
