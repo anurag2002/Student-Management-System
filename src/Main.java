@@ -4,9 +4,11 @@ import Admin.*;
 import Library.*;
 import Sports.*;
 import Mess.*;
+import Student.*;
 
 public class Main
 {
+    static String username;
     static Scanner sc = new Scanner(System.in);
     static int userVerify(Statement stmt, String uid, String pass) throws SQLException
     {
@@ -47,6 +49,10 @@ public class Main
         String pass = sc.next();
 
         int role = userVerify(stmt, uid, pass);
+        if(role == 5)
+        {
+            username = uid;
+        }
         
         sc.close();
         return role;
@@ -90,7 +96,7 @@ public class Main
                     new mess(stmt);
                     break;
                 case 5:
-                    new student(stmt);
+                    new student(stmt, username);
                     break;
             }
 
