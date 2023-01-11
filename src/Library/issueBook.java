@@ -21,7 +21,8 @@ public class issueBook
         String query = "INSERT INTO Book_Issue_List VALUES ((SELECT Book_ID FROM Books_Details WHERE Book_ID = \"" + bookID + "\"),(SELECT URN FROM Student_Details WHERE URN = \"" + URN + "\"),\"" + issueDate + "\"," + null + "," + 0 + ")";
         stmt.execute(query);
 
-
+        query = "UPDATE Book_Details SET Count = (SELECT (Count-1) FROM Books_Details WHERE Book_ID = \"" + bookID + "\") WHERE Book_ID = \"" + bookID + "\"";
+        stmt.execute(query);
     }
     
 }
